@@ -1,6 +1,7 @@
 // App.tsx
 import React from 'react';
-import AppNavigator from './navigation/AppNavigator';
+import AppNavigator from './src/navigation/AppNavigator';
+import './src/i18n'; 
 
 
 export default function App() {

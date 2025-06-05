@@ -5,13 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 
-import { createProduct } from '../services/productService';
+import { createProduct } from '../../services/productService';
 
 const AddProduct = () => {
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
+  const [image, setImage] = useState('');
   
   const [category, setCategory] = useState<'vêtements' | 'chaussures' | 'sacs'>('vêtements');
  const inputRef = useRef<TextInput>(null); // Crée une référence vers le champ TextInput
@@ -86,6 +87,10 @@ const AddProduct = () => {
             <Picker.Item label="Sacs" value="sacs" />
           </Picker>
         </View>
+
+        
+            <Text style={styles.label}>Image (URL ou nom)</Text>
+            <TextInput style={styles.input} value={image} onChangeText={setImage} />
 
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Ajouter</Text>

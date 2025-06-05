@@ -4,8 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
 
-import { Product } from '../types/product';
-import { getAllProducts } from '../services/productService';
+import { Product } from '../../types/product';
+import { getAllProducts } from '../../services/productService';
 import CartProduit from '../components/CartProduit';
 
 type RootStackParamList = {
@@ -29,6 +29,8 @@ const Produit = () => {
     }
   };
 
+
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -40,8 +42,9 @@ const Produit = () => {
   );
 
   const renderItem = ({ item }: { item: Product }) => (
-    <CartProduit product={item} />
-  );
+   <CartProduit product={item} onDelete={fetchProducts} />
+   );
+
 
   if (loading) {
     return (

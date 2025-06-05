@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator, ScrollView, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
-import { getProductById } from '../services/productService';
-import { Product } from '../types/product';
+import { getProductById } from '../../services/productService';
+import { Product } from '../../types/product';
 import { Ionicons } from '@expo/vector-icons';
 
 type RootStackParamList = {
